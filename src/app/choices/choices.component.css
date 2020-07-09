@@ -1,0 +1,18 @@
+.list {
+  list-style: none;
+
+  padding: 0 0.5rem;
+}
+.list__item {
+  text-align: center;
+  border: solid 1px rgba(86, 165, 235, 0.25);
+  border-radius: 8px;
+  padding: 14.4px;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.list__item:hover {
+  transform: translate3d(0px, -5px, 1px);
+  background-color: rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.emojis {
+  /* padding: 0 25px; */
+  padding-top: 1rem;
+}
+
+.emoji {
+  width: 48px;
+  height: 48px;
+
+  margin: 0 20px;
+}
+
+.steps {
+  display: flex;
+  align-self: center;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.line {
+  width: 20%;
+  height: 4px;
+  background-color: orange;
+}
+
+/* triangle */
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  margin: 0 auto;
+  border-bottom: 10px solid orange;
+  position: relative;
+  bottom: 10px;
+}
+
+.question {
+  margin: 0 auto;
+  padding-top: 1rem;
+  font-size: 24px;
+}

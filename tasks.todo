@@ -1,0 +1,25 @@
+1 - split the app to components
+  - whole container (app component)
+  - header with steps and questions
+    - header container of :
+      - emojis 
+      - steps 
+      - questions
+  - list of choices component
+  - agree button component 
+  - book component
+
+2 - work on static version of the app
+    - create header component with cli 
+    - create choices component with cli
+    - create AgreeButton component with cli
+    - create book component with cli 
+    - writing html and css for all components ( ++ changed html direction to rtl and lang=arabic) 
+    * finished , not precised ( perfect static version but it is enough)
+
+3 - fetch api data 
+    - generate service api 
+    - set up httpClient 
+    - made new component quiz and initialize questions variable with json data 
+
+    
