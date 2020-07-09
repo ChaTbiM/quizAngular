@@ -16,8 +16,7 @@ export class QuizComponent implements OnInit {
   answer;
 
   changeStep() {
-    console.log(this.guess, "guess");
-    if (this.currentStep < this.questions.length && this.guess >= 0) {
+    if (this.currentStep < 5 && this.guess >= 0) {
       this.data.isNextClicked();
       let lastGuess = 0;
       // correct
@@ -30,8 +29,8 @@ export class QuizComponent implements OnInit {
 
       setTimeout(
         () => {
-          this.data.incrementStep();
           this.data.isNextClicked();
+          this.data.incrementStep();
           this.data.changeGuessedAnswer(lastGuess);
         },
         2000,

@@ -44,7 +44,9 @@ export class DataService {
   }
   incrementStep() {
     let number = this.currentStepSource.getValue() + 1;
-    this.currentStepSource.next(number);
+    if (number < 5) {
+      this.currentStepSource.next(number);
+    }
   }
 
   isNextClicked() {
