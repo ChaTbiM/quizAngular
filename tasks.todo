@@ -15,11 +15,22 @@
     - create AgreeButton component with cli
     - create book component with cli 
     - writing html and css for all components ( ++ changed html direction to rtl and lang=arabic) 
-    * finished , not precised ( perfect static version but it is enough)
+    * finished , not precised ( perfect ) static version but it is enough
 
 3 - fetch api data 
     - generate service api 
     - set up httpClient 
-    - made new component quiz and initialize questions variable with json data 
+    - made new component quiz and initialize questions variable with json data
+      - fixed cors problem with proxy.conf.json configuration file
 
+4 - working on interactivity
+  - passing data from quiz component to child component according to the current questions
+  - emit event from agree button to quiz component ( X )
+  - remove AgreeButton component to quiz component since it is one line of html and to avoid event emitting and easier data communication between siblings
+
+  (X) - deleted all the logic and start doing the logic again using data service with RxJs
+  - implemented RxJs
+  - working on interactivity ( orange color showing , checking answer , changing emoji according to answer in multi-steps )
+
+- finished , working logic and everything, probably need some styling
     

@@ -12,7 +12,20 @@
   font-size: 1.2rem;
 }
 
-.list__item:hover {
+.list__item:hover:not(.correct-answer):not(.wrong-answer):not(.guessed) {
   transform: translate3d(0px, -5px, 1px);
   background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Selected */
+.guessed {
+  background-color: orange;
+}
+
+.correct-answer {
+  background-color: green;
+}
+
+.wrong-answer {
+  background-color: red;
 }

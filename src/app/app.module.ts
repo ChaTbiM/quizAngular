@@ -1,3 +1,5 @@
+import { ApiService } from "./api.service";
+import { DataService } from "./data.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
@@ -7,7 +9,7 @@ import { HeaderComponent } from "./header/header.component";
 import { ChoicesComponent } from "./choices/choices.component";
 import { AgreeButtonComponent } from "./agree-button/agree-button.component";
 import { BookComponent } from "./book/book.component";
-import { QuizComponent } from './quiz/quiz.component';
+import { QuizComponent } from "./quiz/quiz.component";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { QuizComponent } from './quiz/quiz.component';
     QuizComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
-  providers: [],
+  providers: [DataService, ApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

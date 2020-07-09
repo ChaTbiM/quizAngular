@@ -1,57 +1,29 @@
 <div class="header">
   <div class="emojis">
-    <img
-      class="emoji"
-      width="48"
-      height="48"
-      src="assets/emptyemoji.png"
-      alt=""
-      srcset=""
-    />
-
-    <img
-      class="emoji"
-      width="48"
-      height="48"
-      src="assets/emptyemoji.png"
-      alt=""
-      srcset=""
-    />
-    <img
-      class="emoji"
-      width="48"
-      height="48"
-      src="assets/emptyemoji.png"
-      alt=""
-      srcset=""
-    />
-    <img
-      class="emoji"
-      width="48"
-      height="48"
-      src="assets/emptyemoji.png"
-      alt=""
-      srcset=""
-    />
-    <img
-      class="emoji"
-      width="48"
-      height="48"
-      src="assets/emptyemoji.png"
-      alt=""
-      srcset=""
-    />
+    <img class="emoji" [src]="imagesArray[0]" />
+    <img class="emoji" [src]="imagesArray[1]" />
+    <img class="emoji" [src]="imagesArray[2]" />
+    <img class="emoji" [src]="imagesArray[3]" />
+    <img class="emoji" [src]="imagesArray[4]" />
   </div>
-  <div class="steps">
+  <div class="steps" #steps>
     <div class="line">
-      <div class="arrow-up"></div>
+      <div [ngClass]="{ ' arrow-up ': currentStep == 0 }"></div>
     </div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+    <div class="line">
+      <div [ngClass]="{ ' arrow-up ': currentStep == 1 }"></div>
+    </div>
+    <div class="line">
+      <div [ngClass]="{ ' arrow-up ': currentStep == 2 }"></div>
+    </div>
+    <div class="line">
+      <div [ngClass]="{ ' arrow-up ': currentStep == 3 }"></div>
+    </div>
+    <div class="line">
+      <div [ngClass]="{ ' arrow-up ': currentStep == 4 }"></div>
+    </div>
   </div>
   <p class="question">
-    ماذا مَدَ الأسد كعلامة على صداقته مع الثعلب ؟
+    {{ questions[currentStep].question }}
   </p>
 </div>

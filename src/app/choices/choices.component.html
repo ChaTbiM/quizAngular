@@ -1,5 +1,39 @@
-<ul class="list">
-  <li class="list__item">ذيله</li>
-  <li class="list__item">لسانه</li>
-  <li class="list__item">يده</li>
+<ul class="list" (click)="choiceClickHandler($event)">
+  <li
+    [ngClass]="{
+      ' list__item ': true,
+      ' guessed ': guess == answerIds[0] && !nextStep,
+      ' correct-answer ': guess == answer && guess == answerIds[0] && nextStep,
+      ' wrong-answer ': guess != answer && guess == answerIds[0] && nextStep
+    }"
+    [id]="answerIds[0]"
+    #firstChoice
+  >
+    {{ questions[currentStep][shuffledChoices[0]] }}
+  </li>
+  <li
+    [ngClass]="{
+      ' list__item ': true,
+      ' guessed ': guess == answerIds[1] && !nextStep,
+      ' correct-answer ': guess == answer && guess == answerIds[1] && nextStep,
+      ' wrong-answer ': guess != answer && guess == answerIds[1] && nextStep
+    }"
+    [id]="answerIds[1]"
+    #secondChoice
+  >
+    {{ questions[currentStep][shuffledChoices[1]] }}
+  </li>
+  <li
+    [ngClass]="{
+      ' list__item ': true,
+      ' guessed ': guess == answerIds[2],
+      ' correct-answer ': guess == answer && guess == answerIds[2] && nextStep,
+      ' wrong-answer ': guess != answer && guess == answerIds[2] && nextStep
+    }"
+    [id]="answerIds[2]"
+    #thirdChoice
+  >
+    {{ questions[currentStep][shuffledChoices[2]] }}
+  </li>
 </ul>
+{{ this.guess }}
