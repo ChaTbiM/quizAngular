@@ -1,9 +1,11 @@
 {
   "/main/*": {
     "target": "https://www.quizzito.com/",
-    "secure": true,
+    "secure": false,
     "logLevel": "debug",
-
+    "pathRewrite": {
+      "^/main": "https://www.quizzito.com/"
+    },
     "changeOrigin": true
   }
 }

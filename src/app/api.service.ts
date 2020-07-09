@@ -5,7 +5,8 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class ApiService {
-  questionsUrl = "/main/assets/try_quiz/quizzes/tha3lab.json";
+  questionsUrl =
+    "http://localhost:4200/main/assets/try_quiz/quizzes/tha3lab.json";
   constructor(private httpClient: HttpClient) {}
 
   public getQuestions() {
