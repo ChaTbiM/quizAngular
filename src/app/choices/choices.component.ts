@@ -22,7 +22,7 @@ export class ChoicesComponent implements OnInit, AfterViewInit {
 
   currentStep: number;
   questions: any;
-  guess: number;
+  guess;
   answer: number;
   nextStep: boolean;
   shuffledChoices = this.shuffle(["choice1", "choice2", "choice3"]);
@@ -62,7 +62,18 @@ export class ChoicesComponent implements OnInit, AfterViewInit {
   async ngOnInit() {
     await this.data.step.subscribe((step) => (this.currentStep = step));
     await this.data.questions.subscribe((questions) => {
-      this.questions = questions;
+      // this.questions = questions;
+
+      let results = [];
+      questions.forEach((obj) => {
+        let arr = Object.keys(obj).map((key) => [key, obj[key]]);
+        arr[1][0] = arr[1][0].match(/\d/g).join("");
+        arr[2][0] = arr[2][0].match(/\d/g).join("");
+        arr[3][0] = arr[3][0].match(/\d/g).join("");
+        results.push(arr);
+      });
+      console.log("results", results);
+      this.questions = results;
     });
     await this.data.isNext.subscribe((state) => (this.nextStep = state));
     await this.data.guess.subscribe(
@@ -74,9 +85,8 @@ export class ChoicesComponent implements OnInit, AfterViewInit {
 
   updateGuess(event: any) {
     this.guess = event.target.getAttribute("id");
-    console.log(this.guess, "what");
-    console.log("element", event.target.getAttribute("id"));
-    this.data.changeGuessedNumber(this.guess);
+    // this.guess = event.target.textContent;
+    this.data.changeGuessedAnswer(this.guess);
   }
 
   ngAfterViewInit() {

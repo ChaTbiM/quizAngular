@@ -1,38 +1,47 @@
-<ul class="list" (click)="choiceClickHandler($event)">
+<ul class="list">
   <li
     [ngClass]="{
       ' list__item ': true,
-      ' guessed ': guess == answerIds[0] && !nextStep,
-      ' correct-answer ': guess == answer && guess == answerIds[0] && nextStep,
-      ' wrong-answer ': guess != answer && guess == answerIds[0] && nextStep
+      ' guessed ': guess == questions[currentStep][1][0] && !nextStep,
+      ' correct-answer ':
+        guess == answer && guess == questions[currentStep][1][0] && nextStep,
+      ' wrong-answer ':
+        guess != answer && guess == questions[currentStep][1][0] && nextStep
     }"
-    [id]="answerIds[0]"
+    [id]="questions[currentStep][1][0]"
     #firstChoice
   >
-    {{ questions[currentStep][shuffledChoices[0]] }}
+    <!-- {{ questions[currentStep][shuffledChoices[0]] }} -->
+    {{ questions[currentStep][1][1] }}
   </li>
   <li
     [ngClass]="{
       ' list__item ': true,
-      ' guessed ': guess == answerIds[1] && !nextStep,
-      ' correct-answer ': guess == answer && guess == answerIds[1] && nextStep,
-      ' wrong-answer ': guess != answer && guess == answerIds[1] && nextStep
+      ' guessed ': guess == questions[currentStep][2][0] && !nextStep,
+      ' correct-answer ':
+        guess == answer && guess == questions[currentStep][2][0] && nextStep,
+      ' wrong-answer ':
+        guess != answer && guess == questions[currentStep][2][0] && nextStep
     }"
-    [id]="answerIds[1]"
+    [id]="questions[currentStep][2][0]"
     #secondChoice
   >
-    {{ questions[currentStep][shuffledChoices[1]] }}
+    <!-- {{ questions[currentStep][shuffledChoices[1]] }} -->
+    {{ questions[currentStep][2][1] }}
   </li>
   <li
     [ngClass]="{
       ' list__item ': true,
-      ' guessed ': guess == answerIds[2],
-      ' correct-answer ': guess == answer && guess == answerIds[2] && nextStep,
-      ' wrong-answer ': guess != answer && guess == answerIds[2] && nextStep
+      ' guessed ': guess == questions[currentStep][3][0],
+      ' correct-answer ':
+        guess == answer && guess == questions[currentStep][3][0] && nextStep,
+      ' wrong-answer ':
+        guess != answer && guess == questions[currentStep][3][0] && nextStep
     }"
-    [id]="answerIds[2]"
+    [id]="questions[currentStep][3][0]"
     #thirdChoice
   >
-    {{ questions[currentStep][shuffledChoices[2]] }}
+    <!-- {{ questions[currentStep][shuffledChoices[2]] }} -->
+    {{ questions[currentStep][3][1] }}
   </li>
 </ul>

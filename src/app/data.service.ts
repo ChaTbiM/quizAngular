@@ -52,7 +52,7 @@ export class DataService {
     this.isNextClickedSource.next(state);
   }
 
-  changeGuessedNumber(guessedNumber) {
+  changeGuessedAnswer(guessedNumber) {
     this.guessSource.next(guessedNumber);
   }
 
@@ -62,7 +62,7 @@ export class DataService {
     this.imagesSource.next(arr);
   }
 
-  updateAnswer(answer: number) {
+  updateAnswer(answer) {
     this.answerSource.next(answer);
   }
 }
