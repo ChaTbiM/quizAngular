@@ -21,8 +21,7 @@
             "aot": false,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.css"],
-            "scripts": [],
-            "proxyConfig": "src/proxy.conf.json"
+            "scripts": []
           },
           "configurations": {
             "production": {
