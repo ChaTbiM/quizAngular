@@ -16,9 +16,9 @@ export class QuizComponent implements OnInit {
   answer;
 
   changeStep() {
-    if (this.currentStep < 5 && this.guess >= 0) {
+    if (this.currentStep <= 3 && this.guess >= 0) {
       this.data.isNextClicked();
-      let lastGuess = 0;
+      let lastGuess = -1;
       // correct
       if (this.guess == this.answer) {
         this.data.updateImages("assets/happyemoji.png", this.currentStep);
@@ -36,6 +36,16 @@ export class QuizComponent implements OnInit {
         2000,
         lastGuess
       );
+    } else if (this.currentStep == 4 && this.guess >= 0) {
+      this.data.isNextClicked();
+      let lastGuess = -1;
+      // correct
+      if (this.guess == this.answer) {
+        this.data.updateImages("assets/happyemoji.png", this.currentStep);
+      } else {
+        // wrong
+        this.data.updateImages("assets/sademoji.png", this.currentStep);
+      }
     }
   }
 

@@ -72,7 +72,6 @@ export class ChoicesComponent implements OnInit, AfterViewInit {
         arr[3][0] = arr[3][0].match(/\d/g).join("");
         results.push(arr);
       });
-      console.log("results", results);
       this.questions = results;
     });
     await this.data.isNext.subscribe((state) => (this.nextStep = state));
