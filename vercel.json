@@ -1,5 +1,8 @@
 {
-  "rewrites": [
-    { "source": "(.*)/main/", "destination": "https://www.quizzito.com/main" }
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
+    }
   ]
 }
