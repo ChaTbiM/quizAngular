@@ -6,7 +6,8 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ApiService {
   questionsUrl =
-    "https://www.quizzito.com/main/assets/try_quiz/quizzes/tha3lab.json";
+    "https://cors-anywhere.herokuapp.com/https://www.quizzito.com/main/assets/try_quiz/quizzes/tha3lab.json";
+
   constructor(private httpClient: HttpClient) {}
 
   public getQuestions() {
